@@ -1,18 +1,18 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import {Inter} from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-import {VideoCard} from "@/components/VideoCard";
-import {PastVideoList} from "@/components/PastVideoList";
+import {Screen} from "@/pages/Screen";
+import styled from "@emotion/styled";
+import React from "react";
 
-const inter = Inter({subsets: ['latin']})
+const ScreenContainer = styled.div`
+  width: 100%;
+  margin: auto;
+`;
 
 export default function Home() {
     return (
-        <>
-            <main>
-                <Home/>
-            </main>
-        </>
+        <main>
+            <ScreenContainer>
+                <Screen/>
+            </ScreenContainer>
+        </main>
     )
 }

@@ -5,12 +5,13 @@ import styled from "@emotion/styled";
 const VideoListContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin: 50px;
 `;
 
 export const PastVideoList: FC = () => {
     return (
         <VideoListContainer>
-            {Array(9)
+            {Array(15)
                 .fill(0)
                 .map(() => dummyPastVideo)
                 .map((info, index) => (
