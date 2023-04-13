@@ -8,14 +8,19 @@ const VideoListContainer = styled.div`
   margin: 50px;
 `;
 
-export const PastVideoList: FC = () => {
+
+type Props = {
+    onClick: () => void
+}
+
+export const PastVideoList: FC<Props> = (props, context) => {
     return (
         <VideoListContainer>
             {Array(15)
                 .fill(0)
                 .map(() => dummyPastVideo)
                 .map((info, index) => (
-                    <VideoCard key={index} imageUrl={info.imageUrl} title={info.title} />
+                    <VideoCard key={index} imageUrl={info.imageUrl} title={info.title} onClick={props.onClick}/>
                 ))}
         </VideoListContainer>
     );
@@ -23,5 +28,5 @@ export const PastVideoList: FC = () => {
 
 const dummyPastVideo = {
     imageUrl: "/shakahands.jpeg",
-    title: "しゃかhandsだよ"
+    title: "しゃかさんhandsだよ"
 };
