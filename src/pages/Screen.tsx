@@ -1,4 +1,4 @@
-import {FC, useState} from "react";
+import {FC, useCallback, useState} from "react";
 import {PastVideoList} from "@/components/PastVideoList";
 import styled from "@emotion/styled";
 
@@ -15,17 +15,21 @@ const CounterContainer = styled.p`
   font-size: 200px;
 `;
 
-
 export const Screen: FC = () => {
     const [value, setValue] = useState(0);
 
-    if(value == 10)　alert("やったね！！")
+    if (value == 10) alert("やったね！！")
+
+
+    const handleClick = useCallback(() => {
+        setValue(value + 1)
+    }, [value])
 
     return (
         <>
             <CounterContainer>{value}</CounterContainer>
             <ScreenContainer>
-                <PastVideoList onClick={() => setValue(value + 1)}/>
+                <PastVideoList onClick={handleClick}/>
             </ScreenContainer>
         </>
     )
