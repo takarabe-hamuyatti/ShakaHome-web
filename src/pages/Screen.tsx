@@ -1,4 +1,4 @@
-import {FC, useCallback, useState} from "react";
+import {FC, useCallback, useEffect, useState} from "react";
 import {PastVideoList} from "@/components/PastVideoList";
 import styled from "@emotion/styled";
 
@@ -20,10 +20,9 @@ export const Screen: FC = () => {
 
     if (value == 10) alert("やったね！！")
 
-
     const handleClick = useCallback(() => {
-        setValue(value + 1)
-    }, [value])
+        setValue(value => value + 1)
+    }, [])
 
     return (
         <>
